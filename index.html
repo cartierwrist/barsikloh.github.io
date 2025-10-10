@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой опрос</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 40px auto; }
+        label { display: block; margin-top: 10px; }
+        button { margin-top: 20px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Примите участие в опросе!</h1>
+    <form id="surveyForm">
+        <label>Ваш email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label>Ваш любимый цвет?</label>
+        <input type="text" id="answer1" name="answer1" required>
+
+        <label>Ваше любимое животное?</label>
+        <input type="text" id="answer2" name="answer2" required>
+
+        <button type="submit">Отправить ответ</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        const form = document.getElementById('surveyForm');
+        const messageDiv = document.getElementById('message');
+
+        // ЗАМЕНИТЕ НА ВАШ URL СКРИПТА!
+        const SCRIPT_URL = 'https://script.google.com/macros/s/.../exec';
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                email: document.getElementById('email').value,
+                answer1: document.getElementById('answer1').value,
+                answer2: document.getElementById('answer2').value
+            };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    messageDiv.innerHTML = '<p style="color: green;">Спасибо! Ваш ответ сохранен.</p>';
+                    form.reset();
+                } else {
+                    throw new Error(data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error);
+                messageDiv.innerHTML = '<p style="color: red;">Произошла ошибка. Попробуйте еще раз.</p>';
+            });
+        });
+    </script>
+</body>
+</html>
