@@ -4,41 +4,151 @@
     <meta charset="UTF-8">
     <title>СОЦОПРОС</title>
     <style>
-    @font-face {
-        font-family: 'MyCustomFont';
-        src: url('https://github.com/cartierwrist/barsikloh.github.io/blob/main/files/WildRune.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    body, h1, h2, lable, button {
-        font-family: 'MyCustomFont';
-    }
-</style>
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('https://YOUR_USERNAME.github.io/files/WildRune.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body, h1, h2, label, button {
+            font-family: 'MyCustomFont', Arial, sans-serif;
+        }
+        
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .form-section {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        
+        input[type="text"], input[type="name"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        .checkbox-group {
+            margin: 10px 0;
+        }
+        
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        
+        h2 {
+            font-size: 1.1em;
+            color: #666;
+            margin: 10px 0 5px 0;
+            font-style: italic;
+        }
+        
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        button:hover {
+            background: #45a049;
+        }
+    </style>
 </head>
 <body>
     <h1>Выбери, что ты хочешь :)</h1>
     <form id="surveyForm">
-        <label>Твое имя:</label>
-        <input type="text" id="name" name="name" required placeholder="Введите имя (настоящее, барсиком пж не называться): ">
+        
+        <div class="form-section">
+            <label>Твое имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+        </div>
 
-        <label>Какая пицца?</label>
-        <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
-       <input type="text" id="answer1" name="answer1" required>
+        <div class="form-section">
+            <label>Какая пицца?</label>
+            <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="pizza" value="Маргарита"> Маргарита</label>
+                <label><input type="checkbox" name="pizza" value="Пепперони"> Пепперони</label>
+                <label><input type="checkbox" name="pizza" value="Гавайская"> Гавайская</label>
+                <label><input type="checkbox" name="pizza" value="Четыре сыра"> Четыре сыра</label>
+                <label><input type="checkbox" name="pizza" value="Мясная"> Мясная</label>
+                <label><input type="checkbox" name="pizza" value="Вегетарианская"> Вегетарианская</label>
+                <label><input type="checkbox" name="pizza" value="НЕ БУДУ"> НЕ БУДУ</label>
+            </div>
+        </div>
 
-        <label>Какие роллы?</label>
-        <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
-         <input type="text" id="answer2" name="answer2" required>
+        <div class="form-section">
+            <label>Какие роллы?</label>
+            <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="rolls" value="Филадельфия"> Филадельфия</label>
+                <label><input type="checkbox" name="rolls" value="Калифорния"> Калифорния</label>
+                <label><input type="checkbox" name="rolls" value="Унаги"> Унаги</label>
+                <label><input type="checkbox" name="rolls" value="Темпура"> Темпура</label>
+                <label><input type="checkbox" name="rolls" value="НЕ БУДУ"> НЕ БУДУ</label>
+            </div>
+        </div>
 
-        <label>Что из напитков?</label>
-        <h2>АЛКОГОЛЬ</h2>
-        <input type="text" id="answer3" name="answer3" required>
-        <h2>НЕ АЛКОГОЛЬ</h2>
-        <input type="text" id="answer4" name="answer4" required>
+        <div class="form-section">
+            <label>Что из напитков?</label>
+            
+            <h2>АЛКОГОЛЬ</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="alcohol" value="Пиво"> Пиво</label>
+                <label><input type="checkbox" name="alcohol" value="Вино"> Вино</label>
+                <label><input type="checkbox" name="alcohol" value="Шампанское"> Шампанское</label>
+                <label><input type="checkbox" name="alcohol" value="Виски"> Виски</label>
+                <label><input type="checkbox" name="alcohol" value="НЕ БУДУ"> НЕ БУДУ</label>
+            </div>
+            
+            <h2>НЕ АЛКОГОЛЬ</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="non_alcohol" value="Кола"> Кола</label>
+                <label><input type="checkbox" name="non_alcohol" value="Сок"> Сок</label>
+                <label><input type="checkbox" name="non_alcohol" value="Вода"> Вода</label>
+                <label><input type="checkbox" name="non_alcohol" value="Лимонад"> Лимонад</label>
+                <label><input type="checkbox" name="non_alcohol" value="Чай/Кофе"> Чай/Кофе</label>
+            </div>
+        </div>
 
-        <label>Иные пожелания:</label>
-        <h2>[можете писать что угодно]</h2>
-        <input type="text" id="answer5" name="answer5" required>
+        <div class="form-section">
+            <label>Иные пожелания:</label>
+            <h2>[можете писать что угодно]</h2>
+            <input type="text" id="wishes" name="wishes" placeholder="Ваши пожелания...">
+        </div>
 
         <button type="submit">Отправить ответ</button>
     </form>
@@ -53,23 +163,32 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
+            // Собираем выбранные значения из чекбоксов
+            function getSelectedValues(name) {
+                const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+                return Array.from(checkboxes).map(cb => cb.value).join(', ') || 'Не выбрано';
+            }
+
             const formData = {
-                email: document.getElementById('name').value,
-                answer1: document.getElementById('answer1').value,
-                answer2: document.getElementById('answer2').value,
-                answer3: document.getElementById('answer3').value,
-                answer4: document.getElementById('answer4').value,
-                answer4: document.getElementById('answer5').value
+                name: document.getElementById('name').value,
+                pizza: getSelectedValues('pizza'),
+                rolls: getSelectedValues('rolls'),
+                alcohol: getSelectedValues('alcohol'),
+                non_alcohol: getSelectedValues('non_alcohol'),
+                wishes: document.getElementById('wishes').value
             };
 
             fetch(SCRIPT_URL, {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify(formData)
             })
             .then(response => response.json())
             .then(data => {
                 if (data.result === 'success') {
-                    messageDiv.innerHTML = '<p style="color: green;">Спасибо за ответы! Постараюсь учесть все пожелания</p>';
+                    messageDiv.innerHTML = '<p style="color: green; font-weight: bold;">Спасибо за ответы! Постараюсь учесть все пожелания</p>';
                     form.reset();
                 } else {
                     throw new Error(data.error);
@@ -77,7 +196,7 @@
             })
             .catch(error => {
                 console.error('Error!', error);
-                messageDiv.innerHTML = '<p style="color: red;">Чет пошло не так((( попробуй еще раз, бро</p>';
+                messageDiv.innerHTML = '<p style="color: red; font-weight: bold;">Чет пошло не так((( попробуй еще раз, бро</p>';
             });
         });
     </script>
