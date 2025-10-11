@@ -73,41 +73,46 @@
         const form = document.getElementById('surveyForm');
         const messageDiv = document.getElementById('message');
 
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2iRDgKMdGHaTx8Wue1jC1rGkUqbPs-ofB83WQo6uN96Y_Ue7NEIP0qyeRektfof9K/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxu4u_EFwwrSwr8Ect9KxBdPTq090agW0aOqJKYsMBNeA0ZRqWhdod0MQRBKssLI8pR/exec';
 
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
+    e.preventDefault();
 
-            const formData = {
-                name: document.getElementById('name').value,
-                answer1: document.getElementById('answer1').value,
-                answer2: document.getElementById('answer2').value,
-                answer3: document.getElementById('answer3').value,
-                answer4: document.getElementById('answer4').value,
-                answer5: document.getElementById('answer5').value
-            };
+    const formData = {
+        name: document.getElementById('name').value,
+        answer1: document.getElementById('answer1').value,
+        answer2: document.getElementById('answer2').value,
+        answer3: document.getElementById('answer3').value,
+        answer4: document.getElementById('answer4').value,
+        answer5: document.getElementById('answer5').value
+    };
 
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json', // Добавьте этот заголовок
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    messageDiv.innerHTML = '<p style="color: green;">Спасибо за ответы! Постараюсь учесть все пожелания</p>';
-                    form.reset();
-                } else {
-                    throw new Error(data.error);
-                }
-            })
-            .catch(error => {
-                console.error('Error!', error);
-                messageDiv.innerHTML = '<p style="color: red;">Чет пошло не так((( попробуй еще раз, бро</p>';
-            });
-        });
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network error: ' + response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.result === 'success') {
+            messageDiv.innerHTML = '<p style="color: green;">Спасибо за ответы! Постараюсь учесть все пожелания</p>';
+            form.reset();
+        } else {
+            throw new Error(data.error || 'Unknown error');
+        }
+    })
+    .catch(error => {
+        console.error('Error!', error);
+        messageDiv.innerHTML = '<p style="color: red;">Ошибка: ' + error.message + '</p>';
+    });
+});
     </script>
 </body>
 </html>
