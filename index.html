@@ -23,19 +23,23 @@
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
         <input type="name" id="name" name="name" required>
 
+        <label>Какая пицца?</label>
+        <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
+       <input type="text" id="answer1" name="answer1" required>
+
         <label>Какие роллы?</label>
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
-        <input type="text" id="answer1" name="answer1" required>
+         <input type="text" id="answer2" name="answer2" required>
 
         <label>Что из напитков?</label>
         <h2>АЛКОГОЛЬ</h2>
-        <input type="text" id="answer2" name="answer2" required>
-        <h2>НЕ АЛКОГОЛЬ</h2>
         <input type="text" id="answer3" name="answer3" required>
+        <h2>НЕ АЛКОГОЛЬ</h2>
+        <input type="text" id="answer4" name="answer4" required>
 
         <label>Иные пожелания:</label>
         <h2>[можете писать что угодно]</h2>
-        <input type="text" id="answer4" name="answer4" required>
+        <input type="text" id="answer5" name="answer5" required>
 
         <button type="submit">Отправить ответ</button>
     </form>
@@ -45,7 +49,7 @@
         const form = document.getElementById('surveyForm');
         const messageDiv = document.getElementById('message');
 
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw2xDbtLY4XuW39qGMm6P1TR3Y9qvfZmFlx3FC-WpMpKuPt4wgWJyCTfcuQf2igtLKn/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwSucdd69DXjwW_24BO1pVAlQTrJeCpaJgqZpsb3HD4kSSf3mwTgFw7rY6LhLlJKsaq/exec';
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -55,7 +59,8 @@
                 answer1: document.getElementById('answer1').value,
                 answer2: document.getElementById('answer2').value,
                 answer3: document.getElementById('answer3').value,
-                answer4: document.getElementById('answer4').value
+                answer4: document.getElementById('answer4').value,
+                answer4: document.getElementById('answer5').value
             };
 
             fetch(SCRIPT_URL, {
