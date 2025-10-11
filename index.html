@@ -16,28 +16,77 @@
         font-family: 'MyCustomFont', Arial, sans-serif;
         cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_alt_page_01.png'), auto !important;
     }
+    
     body {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #671c1c;
-        }
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #671c1c;
+        color: white;
+    }
+    
     label {
-            display: block;
-            margin: 10px 0 5px 0;
-            font-weight: bold;
-            background-color: #e8e3e3;
-        }
+        display: block;
+        margin: 15px 0 8px 0;
+        font-weight: bold;
+        color: #FFD700;
+        font-size: 1.2em;
+    }
+    
     h1 {
-            display: block;
-            margin: 10px 0 5px 0;
-            font-weight: bold;
-        }
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        font-weight: normal;
+        text-align: center;
+        color: #FFD700;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+    
+    h2 {
+        color: #FFA500;
+        font-size: 1em;
+        font-style: italic;
+        margin: 10px 0;
+        background: rgba(139, 69, 19, 0.7);
+        padding: 8px;
+        border-radius: 8px;
+    }
+    
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        border: 2px solid #D2691E;
+        border-radius: 8px;
+        background: #FFF8DC;
+        font-size: 1.1em;
+        box-sizing: border-box;
+    }
+    
+    input[type="text"]:focus {
+        outline: none;
+        border-color: #FFD700;
+        box-shadow: 0 0 10px #FFD700;
+    }
+    
+    button {
+        background: linear-gradient(45deg, #FFD700, #FFA500);
+        color: #8B4513;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #message {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2em;
+        font-weight: bold;
     }
 </style>
 </head>
@@ -49,21 +98,21 @@
 
         <label>Какая пицца?</label>
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
-       <input type="text" id="answer1" name="answer1" required>
+        <input type="text" id="answer1" name="answer1" required placeholder="Например: Маргарита, Пепперони, Не буду">
 
         <label>Какие роллы?</label>
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
-         <input type="text" id="answer2" name="answer2" required>
+        <input type="text" id="answer2" name="answer2" required placeholder="Например: Филадельфия, Калифорния, Не буду">
 
         <label>Что из напитков?</label>
         <h2>АЛКОГОЛЬ</h2>
-        <input type="text" id="answer3" name="answer3" required>
+        <input type="text" id="answer3" name="answer3" required placeholder="Например: Пиво, Вино, Не буду">
         <h2>НЕ АЛКОГОЛЬ</h2>
-        <input type="text" id="answer4" name="answer4" required>
+        <input type="text" id="answer4" name="answer4" required placeholder="Например: Кола, Сок, Вода">
 
         <label>Иные пожелания:</label>
         <h2>[можете писать что угодно]</h2>
-        <input type="text" id="answer5" name="answer5" required>
+        <input type="text" id="answer5" name="answer5" placeholder="Ваши пожелания...">
 
         <button type="submit">Отправить ответ</button>
     </form>
@@ -73,46 +122,45 @@
         const form = document.getElementById('surveyForm');
         const messageDiv = document.getElementById('message');
 
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxu4u_EFwwrSwr8Ect9KxBdPTq090agW0aOqJKYsMBNeA0ZRqWhdod0MQRBKssLI8pR/exec';
+        // ЗАМЕНИТЕ ЭТОТ URL НА НОВЫЙ ИЗ РАЗВЕРТЫВАНИЯ!
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiNfIMXv5TaxCqczzTgZxt6U4JZxcZdUKMMv0sorMidNRTK6IAxQVeTTO_4EkhPjVnLw/exec';
 
         form.addEventListener('submit', function(e) {
-    e.preventDefault();
+            e.preventDefault();
 
-    const formData = {
-        name: document.getElementById('name').value,
-        answer1: document.getElementById('answer1').value,
-        answer2: document.getElementById('answer2').value,
-        answer3: document.getElementById('answer3').value,
-        answer4: document.getElementById('answer4').value,
-        answer5: document.getElementById('answer5').value
-    };
+            const formData = {
+                name: document.getElementById('name').value,
+                answer1: document.getElementById('answer1').value,
+                answer2: document.getElementById('answer2').value,
+                answer3: document.getElementById('answer3').value,
+                answer4: document.getElementById('answer4').value,
+                answer5: document.getElementById('answer5').value
+            };
 
-    fetch(SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network error: ' + response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.result === 'success') {
-            messageDiv.innerHTML = '<p style="color: green;">Спасибо за ответы! Постараюсь учесть все пожелания</p>';
-            form.reset();
-        } else {
-            throw new Error(data.error || 'Unknown error');
-        }
-    })
-    .catch(error => {
-        console.error('Error!', error);
-        messageDiv.innerHTML = '<p style="color: red;">Ошибка: ' + error.message + '</p>';
-    });
-});
+            // Показываем загрузку
+            messageDiv.innerHTML = '<p style="color: blue;">Отправка данных...</p>';
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    messageDiv.innerHTML = '<p style="color: green;">✅ Спасибо за ответы! Постараюсь учесть все пожелания</p>';
+                    form.reset();
+                } else {
+                    throw new Error(data.error || 'Unknown error');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error);
+                messageDiv.innerHTML = '<p style="color: red;">❌ Ошибка: ' + error.message + '</p>';
+            });
+        });
     </script>
 </body>
 </html>
