@@ -6,13 +6,14 @@
     <style>
     @font-face {
         font-family: 'MyCustomFont';
-        src: url('https://github.com/cartierwrist/barsikloh.github.io/blob/main/files/WildRune.ttf') format('truetype');
+        src: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/WildRune.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
+        font-display: swap;
     }
     
-    body, h1, h2, lable, button {
-        font-family: 'MyCustomFont';
+    body, h1, h2, label, button {
+        font-family: 'MyCustomFont', Arial, sans-serif;
     }
 </style>
 </head>
@@ -54,16 +55,19 @@
             e.preventDefault();
 
             const formData = {
-                email: document.getElementById('name').value,
+                name: document.getElementById('name').value,
                 answer1: document.getElementById('answer1').value,
                 answer2: document.getElementById('answer2').value,
                 answer3: document.getElementById('answer3').value,
                 answer4: document.getElementById('answer4').value,
-                answer4: document.getElementById('answer5').value
+                answer5: document.getElementById('answer5').value
             };
 
             fetch(SCRIPT_URL, {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Добавьте этот заголовок
+                },
                 body: JSON.stringify(formData)
             })
             .then(response => response.json())
