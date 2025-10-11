@@ -21,7 +21,7 @@
     <form id="surveyForm">
         <label>Какая пицца?</label>
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
-        <input type="email" id="email" name="email" required>
+        <input type="name" id="name" name="name" required>
 
         <label>Какие роллы?</label>
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
@@ -45,13 +45,13 @@
         const form = document.getElementById('surveyForm');
         const messageDiv = document.getElementById('message');
 
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw7DLrk1QjG_gqmRKZkdpw_CM5WRkzN2fVqp7iT4ZcYCnkEDS3HL-lOuAk3mRdzdcFT/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw2xDbtLY4XuW39qGMm6P1TR3Y9qvfZmFlx3FC-WpMpKuPt4wgWJyCTfcuQf2igtLKn/exec';
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
             const formData = {
-                email: document.getElementById('email').value,
+                email: document.getElementById('name').value,
                 answer1: document.getElementById('answer1').value,
                 answer2: document.getElementById('answer2').value,
                 answer3: document.getElementById('answer3').value,
