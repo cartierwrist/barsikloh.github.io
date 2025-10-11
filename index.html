@@ -6,12 +6,12 @@
     <style>
     @font-face {
         font-family: 'MyCustomFont';
-        src: url('https://ваш_логин.github.io/files/WildRune.ttf') format('truetype');
+        src: url('https://cartierwrist.github.io/files/WildRune.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
     
-    body, h1 {
+    body, h1, h2, lable, button {
         font-family: 'MyCustomFont', Arial, sans-serif !important;
     }
 </style>
@@ -20,7 +20,7 @@
     <h1>Выбери, что ты хочешь :)</h1>
     <form id="surveyForm">
         <label>Твое имя:</label>
-        <input type="name" id="name" name="name" required>
+        <input type="text" id="name" name="name" required placeholder="Введите имя (настоящее, барсиком пж не называться): ">
 
         <label>Какая пицца?</label>
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
