@@ -17,16 +17,25 @@
 </style>
 </head>
 <body>
-    <h1>Примите участие в опросе!</h1>
+    <h1>Выбери, что ты хочешь :)</h1>
     <form id="surveyForm">
-        <label>Ваш email:</label>
+        <label>Какая пицца?</label>
+        <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
         <input type="email" id="email" name="email" required>
 
-        <label>Ваш любимый цвет?</label>
+        <label>Какие роллы?</label>
+        <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
         <input type="text" id="answer1" name="answer1" required>
 
-        <label>Ваше любимое животное?</label>
+        <label>Что из напитков?</label>
+        <h2>АЛКОГОЛЬ</h2>
         <input type="text" id="answer2" name="answer2" required>
+        <h2>НЕ АЛКОГОЛЬ</h2>
+        <input type="text" id="answer3" name="answer3" required>
+
+        <label>Иные пожелания:</label>
+        <h2>[можете писать что угодно]</h2>
+        <input type="text" id="answer4" name="answer4" required>
 
         <button type="submit">Отправить ответ</button>
     </form>
@@ -44,7 +53,9 @@
             const formData = {
                 email: document.getElementById('email').value,
                 answer1: document.getElementById('answer1').value,
-                answer2: document.getElementById('answer2').value
+                answer2: document.getElementById('answer2').value,
+                answer3: document.getElementById('answer3').value,
+                answer4: document.getElementById('answer4').value
             };
 
             fetch(SCRIPT_URL, {
@@ -54,7 +65,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.result === 'success') {
-                    messageDiv.innerHTML = '<p style="color: green;">Спасибо! Ваш ответ сохранен.</p>';
+                    messageDiv.innerHTML = '<p style="color: green;">Спасибо за ответы! Постараюсь учесть все пожелания</p>';
                     form.reset();
                 } else {
                     throw new Error(data.error);
@@ -62,7 +73,7 @@
             })
             .catch(error => {
                 console.error('Error!', error);
-                messageDiv.innerHTML = '<p style="color: red;">Произошла ошибка. Попробуйте еще раз.</p>';
+                messageDiv.innerHTML = '<p style="color: red;">Чет пошло не так((( попробуй еще раз, бро</p>';
             });
         });
     </script>
