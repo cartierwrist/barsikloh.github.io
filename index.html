@@ -93,6 +93,7 @@
 <body>
     <h1>Выбери, что ты хочешь :)</h1>
     <form id="surveyForm" action="https://submit-form.com/5N2gD1FtH" method="POST">
+    <input type="hidden" name="_redirect" value="https://cartierwrist.github.io/barsikloh.github.io/">
     
         <label>Твое имя:</label>
         <input type="text" id="name" name="name" required placeholder="Введите имя (настоящее, барсиком пж не называться): ">
@@ -116,22 +117,43 @@
         <input type="text" id="answer5" name="answer5" placeholder="Ваши пожелания...">
 
         <input type="hidden" name="_redirect" value="https://cartierwrist.github.io/barsikloh.github.io/">
-        <input type="hidden" name="_subject" value="🍕 Новый ответ на опрос">
-
+        
         <button type="submit">Отправить ответ</button>
     </form>
     <div id="message"></div>
 
     <script>
-        const form = document.getElementById('surveyForm');
-        const messageDiv = document.getElementById('message');
+    const form = document.getElementById('surveyForm');
+    const messageDiv = document.getElementById('message');
 
-        form.addEventListener('submit', function(e) {
-           
-            messageDiv.innerHTML = '<p style="color: blue;">📤 Отправляем данные...</p>';
-            messageDiv.style.backgroundColor = '#e6f7ff';
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        messageDiv.innerHTML = `
+            <div style="background: #a6d8db; padding: 30px; border-radius: 15px; border: 3px solid #003e6c; text-align: center; color: white;">
+                <h1 style="color: #117f86;">БЛАГОДАРЮ</h1>
+                <p style="font-size: 1.3em; color: #063c40;">Я ОЧЕНЬ ПОСТАРАЮСЬ УЧЕСТЬ ВСЕ ПОЖЕЛАНИЯ</p>
+                
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsiksexxx.png" 
+                     alt="БАСИЧОК" 
+                     style="max-width: 300px; border-radius: 15px; border: 3px solid #507379; margin: 20px 0;">
+            </div>
+        `;
+        
+        const formData = new FormData(form);
+        
+        try {
+            await fetch(form.action, {
+                method: 'POST',
+                body: formData
+            });
             
-        });
+            form.reset();
+            
+        } catch (error) {
+            console.error('КАПЕЦ', error);
+        }
+    });
     </script>
 </body>
 </html>
