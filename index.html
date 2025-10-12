@@ -92,7 +92,8 @@
 </head>
 <body>
     <h1>Выбери, что ты хочешь :)</h1>
-    <form id="surveyForm">
+    <form id="surveyForm" action="https://submit-form.com/form_v1_vBEkwqj2z9R8ZgH4mA0AaEWm" method="POST">
+    
         <label>Твое имя:</label>
         <input type="text" id="name" name="name" required placeholder="Введите имя (настоящее, барсиком пж не называться): ">
 
@@ -114,6 +115,9 @@
         <h2>[можете писать что угодно]</h2>
         <input type="text" id="answer5" name="answer5" placeholder="Ваши пожелания...">
 
+        <input type="hidden" name="_redirect" value="https://cartierwrist.github.io">
+        <input type="hidden" name="_subject" value="🍕 Новый ответ на опрос">
+
         <button type="submit">Отправить ответ</button>
     </form>
     <div id="message"></div>
@@ -122,44 +126,11 @@
         const form = document.getElementById('surveyForm');
         const messageDiv = document.getElementById('message');
 
-        // ЗАМЕНИТЕ ЭТОТ URL НА НОВЫЙ ИЗ РАЗВЕРТЫВАНИЯ!
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwN-URl_q-IVKld9VpbTfkHG5-Isj6vn3Uvse3KL25Z5xwl1Aa3ujueOK6bOEjE-j88ig/exec';
-
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = {
-                name: document.getElementById('name').value,
-                answer1: document.getElementById('answer1').value,
-                answer2: document.getElementById('answer2').value,
-                answer3: document.getElementById('answer3').value,
-                answer4: document.getElementById('answer4').value,
-                answer5: document.getElementById('answer5').value
-            };
-
-            // Показываем загрузку
-            messageDiv.innerHTML = '<p style="color: blue;">Отправка данных...</p>';
-
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === 'success') {
-                    messageDiv.innerHTML = '<p style="color: green;">✅ Спасибо за ответы! Постараюсь учесть все пожелания</p>';
-                    form.reset();
-                } else {
-                    throw new Error(data.error || 'Unknown error');
-                }
-            })
-            .catch(error => {
-                console.error('Error!', error);
-                messageDiv.innerHTML = '<p style="color: red;">❌ Ошибка: ' + error.message + '</p>';
-            });
+           
+            messageDiv.innerHTML = '<p style="color: blue;">📤 Отправляем данные...</p>';
+            messageDiv.style.backgroundColor = '#e6f7ff';
+            
         });
     </script>
 </body>
