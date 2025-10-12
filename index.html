@@ -104,7 +104,15 @@
         <h2>[ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ]</h2>
         <input type="text" id="answer2" name="answer2" required placeholder="Например: Филадельфия, Калифорния, Не буду">
 
-       
+        <label>Что из напитков?</label>
+        <h2>АЛКОГОЛЬ</h2>
+        <input type="text" id="answer3" name="answer3" required placeholder="Например: Пиво, Вино, Не буду">
+        <h2>НЕ АЛКОГОЛЬ</h2>
+        <input type="text" id="answer4" name="answer4" required placeholder="Например: Кола, Сок, Вода">
+
+        <label>Иные пожелания:</label>
+        <h2>[можете писать что угодно]</h2>
+        <input type="text" id="answer5" name="answer5" placeholder="Ваши пожелания...">
 
         <button type="submit">Отправить ответ</button>
     </form>
@@ -124,7 +132,9 @@
                 name: document.getElementById('name').value,
                 answer1: document.getElementById('answer1').value,
                 answer2: document.getElementById('answer2').value,
-                
+                answer3: document.getElementById('answer3').value,
+                answer4: document.getElementById('answer4').value,
+                answer5: document.getElementById('answer5').value
             };
 
             // Показываем загрузку
