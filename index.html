@@ -118,7 +118,19 @@
 
         <label>Какая пицца?</label>
         <h2>ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ</h2>
-        <input type="text" id="answer1" name="answer1" required placeholder="Например: Маргарита, Пепперони, Не буду">
+        <div class="image-options" id="pizza-options">
+            <label class="option-item">
+                <input type="checkbox" name="pizza" value="Четыре сыра">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/4cheese.png" class="option-image">
+                <div class="option-name">Четыре сыра</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="pizza" value="НЕ БУДУ" id="noPizza">
+                <div class="no-thanks" id="noPizzaBtn">🚫</div>
+                <div class="option-name">НЕ БУДУ</div>
+            </label>
+        </div>
 
         <label>Какие роллы?</label>
         <h2>ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ</h2>
@@ -142,11 +154,55 @@
         const form = document.getElementById('surveyForm');
         const messageDiv = document.getElementById('message');
 
-        form.addEventListener('submit', function(e) {
-           
-            messageDiv.innerHTML = '<p style="color: blue;">📤 Отправляем данные...</p>';
-            messageDiv.style.backgroundColor = '#e6f7ff';
+        document.getElementById('noPizzaBtn').addEventListener('click', function() {
+            const noPizzaCheckbox = document.getElementById('noPizza');
+            const pizzaCheckboxes = document.querySelectorAll('input[name="pizza"]:not(#noPizza)');
             
+            noPizzaCheckbox.checked = !noPizzaCheckbox.checked;
+            
+            if (noPizzaCheckbox.checked) {
+                this.classList.add('checked');
+                pizzaCheckboxes.forEach(cb => cb.checked = false);
+            } else {
+                this.classList.remove('checked');
+            }
+        });
+
+        document.getElementById('noRollsBtn').addEventListener('click', function() {
+            const noRollsCheckbox = document.getElementById('noRolls');
+            const rollsCheckboxes = document.querySelectorAll('input[name="rolls"]:not(#noRolls)');
+            
+            noRollsCheckbox.checked = !noRollsCheckbox.checked;
+            
+            if (noRollsCheckbox.checked) {
+                this.classList.add('checked');
+                rollsCheckboxes.forEach(cb => cb.checked = false);
+            } else {
+                this.classList.remove('checked');
+            }
+        });
+
+        document.querySelectorAll('input[name="pizza"]:not(#noPizza)').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('noPizza').checked = false;
+                    document.getElementById('noPizzaBtn').classList.remove('checked');
+                }
+            });
+        });
+
+        document.querySelectorAll('input[name="rolls"]:not(#noRolls)').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('noRolls').checked = false;
+                    document.getElementById('noRollsBtn').classList.remove('checked');
+                }
+            });
+        });
+
+        form.addEventListener('submit', function(e) {
+            messageDiv.innerHTML = '<p style="color: blue;">📤 отправка данных...</p>';
+            messageDiv.style.backgroundColor = '#e6f7ff';
         });
     </script>
 </body>
