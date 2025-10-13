@@ -63,7 +63,7 @@
         font-size: 1em;
         font-style: italic;
         margin: 10px 0;
-        background: rgba(139, 69, 19, 0.7);
+        background: #a55103;
         padding: 8px;
         border-radius: 8px;
     }
@@ -80,11 +80,49 @@
     }
     
     input[type="text"]:focus {
-        outline: none;
-        border-color: #FFD700;
-        box-shadow: 0 0 10px #FFD700;
+        outline: dashed 5px #752407;
+        border-color: #86685e;
+        box-shadow: 0 0 10px #d1694a;
+    }
+
+     .option-name {
+        margin-top: 8px;
+        font-size: 0.9em;
+        color: #fcdea4;
+    }
+
+    .image-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 15px 0;
+        justify-content: center;
     }
     
+    .option-item {
+        text-align: center;
+        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_alt_page_01.png'), auto !important;
+    }
+    
+    .option-image {
+        width: 120px;
+        height: 120px;
+        border: 3px solid #966405;
+        border-radius: 15px;
+        object-fit: contain;
+        transition: all 0.3s ease;
+    }
+    
+    .option-item input[type="checkbox"] {
+        display: none;
+    }
+    
+    .option-item input[type="checkbox"]:checked + .option-image {
+        border-color: #FFD700;
+        box-shadow: 0 0 15px #FFD700;
+        transform: scale(1.05);
+    }
+        
     button {
         background: linear-gradient(45deg, #FFD700, #FFA500);
         color: #8B4513;
