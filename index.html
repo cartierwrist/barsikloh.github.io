@@ -1,4 +1,4 @@
-<!DOCTYPE html>      
+<!DOCTYPE html>    
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -31,8 +31,6 @@
     .option-item:hover .option-image,
     .option-item:hover .option-name,
     button:hover,
-    .sushi-plate-container:hover,
-    .sushi-plate-container:hover .sushi-image,
     input[type="text"]:hover {
         cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
     }
@@ -44,7 +42,7 @@
         font-style: normal;
         font-display: swap;
     }
-
+    
     body, h1, h2, label, button {
         font-family: 'MyCustomFont', Arial, sans-serif;
         cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_alt_page_01.png'), auto !important;
@@ -91,101 +89,17 @@
         padding: 8px;
         border-radius: 8px;
     }
-
-    .sushi-plate-container {
-        position: relative;
-        width: 500px;
-        height: 500px;
-        margin: 30px auto;
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        }
-
-    .sushi-plate-base {
+    
+    input[type="text"] {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        z-index: 1;
-    }
-
-    .sushi-items {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-    }
-
-    .sushi-item {
-        position: absolute;
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
-        transition: all 0.1s ease;
-        z-index: 3;
-        }
-
-    .sushi-image {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        object-position: center center;
-        transition: all 0.1s ease;
-        border: 2px solid transparent;
-        margin: 0;
-        padding: 0;
-        display: block;
+        padding: 12px;
+        margin: 8px 0;
+        border: 2px solid #D2691E;
         border-radius: 8px;
+        background: #FFF8DC;
+        font-size: 1.1em;
+        box-sizing: border-box;
     }
-
-    /* Позиционирование каждой суши на тарелке */
-    .sushi-item:nth-child(1) { top: 30%; left: 25%; }
-    .sushi-item:nth-child(2) { top: 30%; left: 50%; }
-    .sushi-item:nth-child(3) { top: 50%; left: 25%; }
-    .sushi-item:nth-child(4) { top: 50%; left: 50%; }
-    .sushi-item:nth-child(5) { top: 15%; left: 37%; }
-    .sushi-item:nth-child(6) { top: 15%; left: 63%; }
-    .sushi-item:nth-child(7) { top: 65%; left: 37%; }
-    .sushi-item:nth-child(8) { top: 65%; left: 63%; }
-
-    .sushi-item input[type="checkbox"] {
-        display: none;
-    }
-    
-    .sushi-item input[type="checkbox"]:checked + .sushi-image {
-        transform: scale(1.2);
-        border-color: #ffda56;
-        box-shadow: 0 0 15px #ffdb66;
-    }
-    
-    .sushi-item:hover .sushi-image {
-        transform: scale(1.1);
-    }
-
-    @media (max-width: 600px) {
-        .sushi-plate-container {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .sushi-image {
-            width: 50px;
-            height: 50px;
-        }
-    }
-            
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 2px solid #D2691E;
-            border-radius: 8px;
-            background: #FFF8DC;
-            font-size: 1.1em;
-            box-sizing: border-box;
-        }
     
     input[type="text"]:focus {
         outline: dashed 5px #fcd2c3;
@@ -214,6 +128,7 @@
         text-align: center;
         width: 160px;
         flex: 0 0 calc(25% - 25px);
+        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), auto !important;
     }
     
     .option-image {
@@ -241,6 +156,7 @@
         padding: 15px 40px;
         border: none;
         border-radius: 25px;
+        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), auto !important;
         font-size: 1.3em;
         font-weight: bold;
         margin-top: 20px;
@@ -255,11 +171,6 @@
         font-size: 1.2em;
         font-weight: bold;
     }
-
-    .sushi-plate-container + label {
-        margin-top: 50px;
-    }
-    
 </style>
 </head>
 <body>
@@ -573,66 +484,7 @@
                 <input type="checkbox" name="rolls" value="НЕ БУДУ" id="noRolls">
                 <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsik_ne_budu.png" class="option-image">
                 <div class="option-name">НЕ БУДУ</div>
-            </label>    
-        </div>
-
-        <h2>НАЖМИ НА КОНКРЕТНЫЕ СУШИ В ТАРЕЛКЕ, ЧТОБЫ ВЫБРАТЬ. МОЖНО ВЫБРАТЬ НЕСКОЛЬКО</h2>
-
-            <div class="sushi-plate-container">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/plate_with.PNG" 
-                     class="sushi-plate-base" 
-                     alt="Тарелка с суши">
-
-            <div class="sushi-items">
-
-                <label class="sushi-item">
-                    <input type="checkbox" name="sushi" value="суши саке">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sake_sushi.PNG" 
-                         class="sushi-image">
-                    </label>
-
-                <label class="sushi-item">
-                <input type="checkbox" name="sushi" value="эби суши">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ebi_sushi.PNG" 
-                         class="sushi-image">
-                    </label>
-
-                <label class="sushi-item">
-                    <input type="checkbox" name="sushi" value="Унаги суши">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/unagi_sushi.PNG" 
-                         class="sushi-image">
-                </label>
-
-                <label class="sushi-item">
-                    <input type="checkbox" name="sushi" value="чука суши">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/chuka.PNG" 
-                         class="sushi-image">
-                </label>
-
-                <label class="sushi-item">
-                    <input type="checkbox" name="sushi" value="гункан угорь под спайси соусом">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ugor_sushi.PNG" 
-                         class="sushi-image">
-                </label>
-
-                <label class="sushi-item">
-                    <input type="checkbox" name="sushi" value="гункан креветка под спайси соусом">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krevetka.PNG" 
-                         class="sushi-image">
-                </label>
-
-                <label class="sushi-item">
-                    <input type="checkbox" name="sushi" value="гункан лосось под спайси соусом">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos.PNG" 
-                         class="sushi-image">
-                </label>
-
-                <label class="sushi-item">
-                    <input type="checkbox" name="sushi" value="гункан лосось под сырным соусом">
-                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos_syr.PNG" 
-                         class="sushi-image">
-                </label>
-            </div>
+            </label>
         </div>
 
         <label>Что из напитков?</label>
