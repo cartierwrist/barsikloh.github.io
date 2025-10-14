@@ -146,6 +146,18 @@
         transform: scale(1.1);
         filter: brightness(1.1);
     }
+
+    @media (max-width: 600px) {
+        .sushi-plate-container {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .sushi-image {
+            width: 50px;
+            height: 50px;
+        }
+    }
             
         input[type="text"] {
             width: 100%;
@@ -541,9 +553,10 @@
                 <input type="checkbox" name="rolls" value="НЕ БУДУ" id="noRolls">
                 <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsik_ne_budu.png" class="option-image">
                 <div class="option-name">НЕ БУДУ</div>
-            </label>
+            </label>    
+        </div>
 
-            <h2>НАЖМИ НА КОНКРЕТНЫЕ СУШИ В ТАРЕЛКЕ, ЧТОБЫ ВЫБРАТЬ. МОЖНО ВЫБРАТЬ НЕСКОЛЬКО</h2>
+        <h2>НАЖМИ НА КОНКРЕТНЫЕ СУШИ В ТАРЕЛКЕ, ЧТОБЫ ВЫБРАТЬ. МОЖНО ВЫБРАТЬ НЕСКОЛЬКО</h2>
 
             <div class="sushi-plate-container">
                 <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/plate_with.png" 
@@ -607,7 +620,6 @@
                  class="sushi-image"
                  data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos_syr.png"
         </label>
-                
         </div>
 
         <label>Что из напитков?</label>
