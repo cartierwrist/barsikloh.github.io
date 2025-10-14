@@ -96,7 +96,6 @@
     position: relative;
     width: 500px;
     height: 500px;
-    margin: 0 auto;
     margin: 30px auto;
     cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
     }
@@ -106,26 +105,32 @@
         height: 100%;
         object-fit: cover;
         position: relative;
+        z-index: 1;
     }
 
     .sushi-items {
-        position: relative;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 2;
     }
 
     .sushi-item {
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
         transition: all 0.1s ease;
-    }
+        z-index: 3;
+        }
 
     .sushi-image {
         width: 100%;
         height: 100%;
-        border-radius: 50%;
         object-fit: cover;
         transition: all 0.3s ease;
         border: 2px solid transparent;
@@ -563,67 +568,59 @@
 
             <div class="sushi-plate-container">
                 <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/plate_with.PNG" 
-         class="sushi-plate-base" 
-         alt="Тарелка с суши">
+                     class="sushi-plate-base" 
+                     alt="Тарелка с суши">
 
             <div class="sushi-items">
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="суши саке">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sake_sushi.PNG" 
-                 class="sushi-image" 
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sake_sushi.PNG"
-        </label>
+                    <input type="checkbox" name="rolls" value="суши саке">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sake_sushi.PNG" 
+                         class="sushi-image">
+                    </label>
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="эби суши">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ebi_sushi.PNG" 
-                 class="sushi-image"
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ebi_sushi.PNG"
-        </label>
+                <input type="checkbox" name="rolls" value="эби суши">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ebi_sushi.PNG" 
+                         class="sushi-image">
+                    </label>
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="Унаги суши">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/unagi_sushi.PNG" 
-                 class="sushi-image"
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/unagi_sushi.PNG"
-        </label>
+                    <input type="checkbox" name="rolls" value="Унаги суши">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/unagi_sushi.PNG" 
+                         class="sushi-image"
+                </label>
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="чука суши">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/chuka.PNG" 
-                 class="sushi-image"
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/chuka.PNG"
-        </label>
+                    <input type="checkbox" name="rolls" value="чука суши">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/chuka.PNG" 
+                         class="sushi-image"
+                </label>
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="гункан угорь под спайси соусом">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ugor_sushi.PNG" 
-                 class="sushi-image"
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ugor_sushi.PNG"
-        </label>
+                    <input type="checkbox" name="rolls" value="гункан угорь под спайси соусом">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ugor_sushi.PNG" 
+                         class="sushi-image"
+                </label>
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="гункан креветка под спайси соусом">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krevetka.PNG" 
-                 class="sushi-image"
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krevetka.PNG"
-        </label>
+                    <input type="checkbox" name="rolls" value="гункан креветка под спайси соусом">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krevetka.PNG" 
+                         class="sushi-image"
+                </label>
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="гункан лосось под спайси соусом">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos.PNG" 
-                 class="sushi-image"
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos.PNG"
-        </label>
+                    <input type="checkbox" name="rolls" value="гункан лосось под спайси соусом">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos.PNG" 
+                         class="sushi-image"
+                </label>
 
                 <label class="sushi-item">
-            <input type="checkbox" name="rolls" value="гункан лосось под сырным соусом">
-            <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos_syr.PNG" 
-                 class="sushi-image"
-                 data-original-src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos_syr.PNG"
-        </label>
-        </div>
+                    <input type="checkbox" name="rolls" value="гункан лосось под сырным соусом">
+                    <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/loshos_syr.PNG" 
+                         class="sushi-image"
+                </label>
+            </div>
 
         <label>Что из напитков?</label>
         <h2>АЛКОГОЛЬ</h2>
