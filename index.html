@@ -67,6 +67,15 @@
         padding: 8px;
         border-radius: 8px;
     }
+
+    h3 {
+        color: #ff0000;
+        font-size: 1em;
+        margin: 10px 0;
+        background: #f7ebae;
+        padding: 8px;
+        border-radius: 8px;
+    }
     
     input[type="text"] {
         width: 100%;
@@ -80,7 +89,7 @@
     }
     
     input[type="text"]:focus {
-        outline: dashed 5px #752407;
+        outline: dashed 5px #fcd2c3;
         border-color: #86685e;
         box-shadow: 0 0 10px #d1694a;
     }
@@ -89,6 +98,9 @@
         margin-top: 8px;
         font-size: 0.9em;
         color: #fcdea4;
+        width: 120px;
+        word-wrap: break-word;
+        line-height: 1.3;
     }
 
     .image-options {
@@ -101,6 +113,7 @@
     
     .option-item {
         text-align: center;
+        width: 120px;
         cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_alt_page_01.png'), auto !important;
     }
     
@@ -110,7 +123,7 @@
         border: 3px solid #966405;
         border-radius: 15px;
         object-fit: contain;
-        transition: all 0.3s ease;
+        transition: all 0.1s ease-in-out;
     }
     
     .option-item input[type="checkbox"] {
@@ -118,9 +131,9 @@
     }
     
     .option-item input[type="checkbox"]:checked + .option-image {
-        border-color: #FFD700;
-        box-shadow: 0 0 15px #FFD700;
-        transform: scale(1.05);
+        border-color: #ffda56;
+        box-shadow: 0 0 15px #ffdb66;
+        transform: scale(1.3);
     }
         
     button {
@@ -318,13 +331,156 @@
 
         <label>Какие роллы?</label>
         <h2>ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ</h2>
-        <input type="text" id="answer2" name="answer2" required placeholder="Например: Филадельфия, Калифорния, Не буду">
+
+        <div class="image-options" id="rollsOptions">
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="Эби ролл">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ebiroll" class="option-image">
+                <div class="option-name">Эби ролл</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="КРЕВЕТКА ТЕМПУРА">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krev_temp" class="option-image">
+                <div class="option-name">КРЕВЕТКА ТЕМПУРА</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="АЛЯСКА">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/alaska" class="option-image">
+                <div class="option-name">АЛЯСКА</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="КАНАГАВА">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/kanagava" class="option-image">
+                <div class="option-name">КАНАГАВА</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="РОЛЛ С КРЕВЕТКАМИ ВАСАБИ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krev_vasabi" class="option-image">
+                <div class="option-name">РОЛЛ С КРЕВЕТКАМИ ВАСАБИ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value=" ОПАЛЁННАЯ ФИЛАДЕЛЬФИЯ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/opal_phil" class="option-image">
+                <div class="option-name"> ОПАЛЁННАЯ ФИЛАДЕЛЬФИЯ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ ТЕМПУРА">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_tempura" class="option-image">
+                <div class="option-name">ФИЛАДЕЛЬФИЯ ТЕМПУРА</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ С АВОКАДО И МАНГО">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_avok_mang" class="option-image">
+                <div class="option-name">ФИЛАДЕЛЬФИЯ С АВОКАДО И МАНГО</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ РОЯЛ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_royal" class="option-image">
+                <div class="option-name">ФИЛАДЕЛЬФИЯ РОЯЛ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="САКЕ АВОКАДО">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sake_avokado" class="option-image">
+                <div class="option-name">САКЕ АВОКАДО</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ В УГРЕ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_v_ugre" class="option-image">
+                <div class="option-name">ФИЛАДЕЛЬФИЯ В УГРЕ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/philadelph" class="option-image">
+                <div class="option-name">ФИЛАДЕЛЬФИЯ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="ВЕРОНА">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/verona" class="option-image">
+                <div class="option-name">ВЕРОНА</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="ЗАПЕЧЁННЫЙ КРАБ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/zapech_krab" class="option-image">
+                <div class="option-name">ЗАПЕЧЁННЫЙ КРАБ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="САМУРАЙ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/samurai" class="option-image">
+                <div class="option-name">САМУРАЙ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="УГОРЬ ТЕМПУРА">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ugor_temp" class="option-image">
+                <div class="option-name">УГОРЬ ТЕМПУРА</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="УНАГИ ОПАЛЁННЫЙ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/unagi_opal" class="option-image">
+                <div class="option-name">УНАГИ ОПАЛЁННЫЙ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="САППОРО">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sapporo" class="option-image">
+                <div class="option-name">САППОРО</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="КОГАНЭ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/kogane" class="option-image">
+                <div class="option-name">КОГАНЭ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="НЕЖНАЯ КАЛИФОРНИЯ">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/kaliforni" class="option-image">
+                <div class="option-name">НЕЖНАЯ КАЛИФОРНИЯ</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/" class="option-image">
+                <div class="option-name"></div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/" class="option-image">
+                <div class="option-name"></div>
+            </label>
+            
+            <label class="option-item">
+                <input type="checkbox" name="rolls" value="НЕ БУДУ" id="noRolls">
+                <div class="no-thanks" id="noRollsBtn">🚫</div>
+                <div class="option-name">НЕ БУДУ</div>
+            </label>
+        </div>
 
         <label>Что из напитков?</label>
         <h2>АЛКОГОЛЬ</h2>
-        <input type="text" id="answer3" name="answer3" required placeholder="Например: Пиво, Вино, Не буду">
+        <h3>НАПИШИ НАЗВАНИЕ И ВКУС ПИВА ИЛИ СИДРА И ИХ КОЛЛИЧЕСТВО, КОТОРЫЕ ХОЧЕШЬ. ЕСЛИ ЭТО РАЗЛИВНУХА, ТО ЕЩЕ И АДРЕС</h3>
+        <h3>(ЕСЛИ ТЫ ХОЧЕШЬ ЧТО-ТО БОЛЕЕ КРЕПКОЕ, ТО ТОЖЕ МОЖЕШЬ НАПИСАТЬ, ЕСЛИ БУДЕТ НЕСКОЛЬКО ЧЕЛОВЕК С ТАКИМ ВЫБОРОМ, ТО Я БЕЗ ПРОБЛЕМ УДОВЛЕТВОРЮ ЖЕЛАНИЕ)</h3>
+        <h3>ЕСЛИ ТЫ НИЧЕГО НЕ БУДЕШЬ, ТО ПИШИ "НЕ БУДУ"</h3>
+        <input type="text" id="answer3" name="answer3" required placeholder="мяу мяу мяу">
         <h2>НЕ АЛКОГОЛЬ</h2>
-        <input type="text" id="answer4" name="answer4" required placeholder="Например: Кола, Сок, Вода">
+        <input type="text" id="answer4" name="answer4" required placeholder="Кола, сок (вкус), квас (бренд), минералка и т.д.">
 
         <label>Иные пожелания:</label>
         <h2>можете писать что угодно</h2>
