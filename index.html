@@ -1,476 +1,114 @@
-<!DOCTYPE html>    
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>СОЦОПРОС</title> 
-
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#FFD700" />
+    <title>П.</title>
+    
     <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png">
-
-    <meta name="msapplication-TileColor" content="#FFD700" />
-    <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png" />
-    <meta name="theme-color" content="#FFD700" />
-    
-    <link rel="manifest" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/manifest.json">
-    
     <meta name="theme-color" content="#FFD700">
     
     <style>
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/WildRune.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    html, body, * {
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_alt_page_01.png'), auto !important;
-    }
+        html, body, * {
+            cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_alt_page_01.png'), auto !important;
+        }
 
-    .option-item:hover,
-    .option-item:hover .option-image,
-    .option-item:hover .option-name,
-    button:hover,
-    input[type="text"]:hover {
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
-    }
-        
-    @font-face {
-        font-family: 'MyCustomFont';
-        src: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/WildRune.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #FFD700;
+            color: #671c1c;
+            font-family: 'MyCustomFont', Arial, sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .option-composition {
-        margin-top: 8px;
-        font-size: 0.8em;
-        color: #eee4ab;
-        width: 160px;
-        word-wrap: break-word;
-        line-height: 1.2;
-        font-family: Arial, sans-serif;
-        font-weight: 300;
-        opacity: 0.9;
-    }
-    
-    body, h1, h2, label, button {
-        font-family: 'MyCustomFont', Arial, sans-serif;
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_alt_page_01.png'), auto !important;
-    }
-    
-    body {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #671c1c;
-        color: white;
-    }
-    
-    label {
-        display: block;
-        margin: 15px 0 8px 0;
-        font-weight: bold;
-        color: #FFD700;
-        font-size: 1.2em;
-    }
-    
-    h1 {
-        text-align: center;
-        color: #FFD700;
-        font-size: 2.5em;
-        margin-bottom: 30px;
-    }
-    
-    h2 {
-        color: #FFA500;
-        font-size: 1em;
-        font-style: italic;
-        margin: 10px 0;
-        background: #a55103;
-        padding: 8px;
-        border-radius: 8px;
-    }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
 
-    h3 {
-        color: #ff0000;
-        font-size: 1em;
-        margin: 10px 0;
-        background: #f7ebae;
-        padding: 8px;
-        border-radius: 8px;
-    }
-    
-    input[type="text"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        border: 2px solid #D2691E;
-        border-radius: 8px;
-        background: #FFF8DC;
-        font-size: 1.1em;
-        box-sizing: border-box;
-    }
-    
-    input[type="text"]:focus {
-        outline: dashed 5px #fcd2c3;
-        border-color: #86685e;
-        box-shadow: 0 0 10px #d1694a;
-    }
+        .btn-group {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
 
-     .option-name {
-        margin-top: 15px;
-        font-size: 0.9em;
-        color: #fcdea4;
-        width: 160px;
-        word-wrap: break-word;
-        line-height: 1.3;
-    }
+        button {
+            background: linear-gradient(45deg, #671c1c, #8B4513);
+            color: #FFD700;
+            padding: 15px 50px;
+            border: 3px solid #671c1c;
+            border-radius: 25px;
+            cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
+            font-size: 1.5em;
+            font-family: 'MyCustomFont', Arial, sans-serif;
+            font-weight: bold;
+            transition: transform 0.1s ease;
+        }
 
-    .image-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        margin: 35px 0;
-        justify-content: center;
-    }
-    
-    .option-item {
-        text-align: center;
-        width: 160px;
-        flex: 0 0 calc(25% - 25px);
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), auto !important;
-    }
-    
-    .option-image {
-        width: 160px;
-        height: 160px;
-        border: 3px solid #966405;
-        border-radius: 15px;
-        object-fit: contain;
-        transition: all 0.1s ease-in-out;
-    }
-    
-    .option-item input[type="checkbox"] {
-        display: none;
-    }
-    
-    .option-item input[type="checkbox"]:checked + .option-image {
-        border-color: #ffda56;
-        box-shadow: 0 0 20px #ffdb66;
-        transform: scale(1.15);
-    }
-        
-    button {
-        background: linear-gradient(45deg, #FFD700, #FFA500);
-        color: #8B4513;
-        padding: 15px 40px;
-        border: none;
-        border-radius: 25px;
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), auto !important;
-        font-size: 1.3em;
-        font-weight: bold;
-        margin-top: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    #message {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 1.2em;
-        font-weight: bold;
-    }
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+        }
 
-    /* Стили для красной ссылки-слова */
-    .red-link {
-        color: #ff0000 !important;
-        border: 2px solid #ff0000;
-        border-radius: 8px;
-        padding: 2px 8px;
-        text-decoration: none;
-        font-family: 'MyCustomFont', Arial, sans-serif; /* такой же стиль шрифта */
-        font-style: italic; /* чтобы соответствовать стилю h2 */
-        display: inline-block;
-        transition: all 0.2s ease;
-    }
-    
-    .red-link:hover {
-        background-color: #ff0000;
-        color: #ffffff !important;
-        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
-    }
-</style>
+        #nazar-image {
+            max-width: 100%;
+            width: 400px;
+            border: 5px solid #671c1c;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(103, 28, 28, 0.3);
+            margin-bottom: 30px;
+        }
+
+       
+        .hidden {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
-    <h1>Выбери, что ты хочешь :)</h1>
-    <form id="surveyForm" action="https://submit-form.com/5N2gD1FtH" method="POST">
-    <input type="hidden" name="_redirect" value="https://cartierwrist.github.io/barsikloh.github.io/thanks.html">
+
+   
+    <div id="question-block">
+        <h1>ваше имя начинается на "н" и заканчивается на "азар"?</h1>
+        <div class="btn-group">
+            <button onclick="showNazar()">Да</button>
+            <button onclick="goToSurvey()">Нет</button>
+        </div>
+    </div>
+
     
-        <label>Твое имя:</label>
-        <input type="text" id="name" name="name" required placeholder="Введите имя (настоящее, барсиком пж не называться): ">
+    <div id="nazar-block" class="hidden">
+        <img id="nazar-image" src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/nazar.png" alt="Назар">
+        <br>
+        <button onclick="goToSurvey()">Всё равно к опросу</button>
+    </div>
 
-        <label>Какая пицца?</label>
-        <h2>ЕСЛИ ТЫ НЕ ХОЧЕШЬ ПИЦЦУ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ</h2>
-        
-        <div class="image-options" id="pizza-options">
-            
-            <label class="option-item">
-                <input type="checkbox" name="pizza" value="Четыре сыра">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/4cheese.png" class="option-image">
-                <div class="option-name">Четыре сыра</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="pizza" value="Аррива!">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/arriva.png" class="option-image">
-                <div class="option-name">Аррива!</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="pizza" value="Бефстроганов">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/beff.png" class="option-image">
-                <div class="option-name">Бефстроганов</div>
-            </label>
-
-             <label class="option-item">
-                <input type="checkbox" name="pizza" value="Бургер-пицца">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/burgerpizza.png" class="option-image">
-                <div class="option-name">Бургер-пицца</div>
-            </label>
-
-             <label class="option-item">
-                <input type="checkbox" name="pizza" value="Сырный цыпленок">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/cheese_chiken.png" class="option-image">
-                <div class="option-name">Сырный цыпленок</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="pizza" value="Сырный цыпленок">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/trufelnaia.png" class="option-image">
-                <div class="option-name">Трюфельная</div>
-            </label>
-
-             <label class="option-item">
-                <input type="checkbox" name="pizza" value="Цыпленок барбекю">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/chiken_barbek.png" class="option-image">
-                <div class="option-name">Цыпленок барбекю</div>
-            </label>
-
-              <label class="option-item">
-                <input type="checkbox" name="pizza" value="Чилл Грилл">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/chillgrill.png" class="option-image">
-                <div class="option-name">Чилл Грил</div>
-            </label>
-
-                 <label class="option-item">
-                <input type="checkbox" name="pizza" value="Диабло">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/diablo.png" class="option-image">
-                <div class="option-name">Диабло</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Додо">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/dodo.png" class="option-image">
-                <div class="option-name">Додо</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Двойной цыпленок">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/dvoinoichiken.png" class="option-image">
-                <div class="option-name">Двойной цыпленок</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Гавайская">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/gavaiskaia.png" class="option-image">
-                <div class="option-name">Гавайская</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Карбонара">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/karbonara.png" class="option-image">
-                <div class="option-name">Карбонара</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Креветки со сладким чилли">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/krevetka_chilli.png" class="option-image">
-                <div class="option-name">Креветки со сладким чилли</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Креветка и песто">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/krevetkaipesto.png" class="option-image">
-                <div class="option-name">Креветка и песто</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Маргарита">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/margarita.png" class="option-image">
-                <div class="option-name">Маргарита</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Мясная">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/miasnaya.png" class="option-image">
-                <div class="option-name">Мясная</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Мясной микс">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/mixmeat.png" class="option-image">
-                <div class="option-name">Мясной микс</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Охотничья">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/ohotnichia.png" class="option-image">
-                <div class="option-name">Охотничья</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Овощи и грибы">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/ovochiigriby.png" class="option-image">
-                <div class="option-name">Овощи и грибы</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Двойная пепперони">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/peper_x2.png" class="option-image">
-                <div class="option-name">Двойная пепперони</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Пепперони">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/pepperoni.png" class="option-image">
-                <div class="option-name">Пепперони</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Песто">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/pesto.png" class="option-image">
-                <div class="option-name">Песто</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Терияки">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/teriaki.png" class="option-image">
-                <div class="option-name">Терияки</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Ветчина и грибы">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/vetchinaigriby.png" class="option-image">
-                <div class="option-name">Ветчина и грибы</div>
-            </label>
-
-                <label class="option-item">
-                <input type="checkbox" name="pizza" value="Ветчина и сыр">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/vetchinaisyr.png" class="option-image">
-                <div class="option-name">Ветчина и сыр</div>
-            </label>
-            
-            <label class="option-item">
-                <input type="checkbox" name="pizza" value="НЕ БУДУ" id="noPizza">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsik_ne_budu.png" class="option-image">
-                <div class="option-name">НЕ БУДУ</div>
-            </label>
-        </div>
-
-        <label>Роллы</label>
-        <h2>ДЕМОКРАТИИ НЕ БУДЕТ!</h2>
-        
-        <h2>заказывать буду <a href="https://vkusnyesushi.ru/#category-350" target="_blank" class="red-link">отсюда</a>, можете просто посмотреть че там есть, ну так чисто для настроения</h2>
-
-        <div class="image-options" id="rollsOptions">
-            
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="НЕ БУДУ" id="noRolls">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsik_ne_budu.png" class="option-image">
-                <div class="option-name">НЕ БУДУ</div>
-            </label>
-        </div>
-
-        <label>Что из напитков?</label>
-        <h2>АЛКОГОЛЬ</h2>
-        <h3>КУПЛЮ ЧЕ ХОТИТЕ В РАМКАХ РАЗУМНОГО</h3>
-
-        <h3>ЕСЛИ ТЫ НИЧЕГО НЕ БУДЕШЬ, ТО ПИШИ "НЕ БУДУ"</h3>
-        <input type="text" id="answer3" name="answer3" required placeholder="мяу мяу мяу">
-        <h2>НЕ АЛКОГОЛЬ</h2>
-        <input type="text" id="answer4" name="answer4" required placeholder="Кола, сок (вкус), квас (бренд), минералка и т.д.">
-
-        <label>Иные пожелания:</label>
-        <h2>можете писать что угодно</h2>
-        <input type="text" id="answer5" name="answer5" placeholder="Ваши пожелания...">
-
-        <button type="submit">Отправить ответ</button>
-    </form>
-    <div id="message"></div>
-
-    <script>
-        const form = document.getElementById('surveyForm');
-        const messageDiv = document.getElementById('message');
-
-        const noPizzaBtn = document.getElementById('noPizzaBtn');
-        if (noPizzaBtn) {
-            noPizzaBtn.addEventListener('click', function() {
-                const noPizzaCheckbox = document.getElementById('noPizza');
-                const pizzaCheckboxes = document.querySelectorAll('input[name="pizza"]:not(#noPizza)');
-                
-                noPizzaCheckbox.checked = !noPizzaCheckbox.checked;
-                
-                if (noPizzaCheckbox.checked) {
-                    this.classList.add('checked');
-                    pizzaCheckboxes.forEach(cb => cb.checked = false);
-                } else {
-                    this.classList.remove('checked');
-                }
-            });
+        <script>
+        function showNazar() {
+            document.getElementById('question-block').classList.add('hidden');
+            document.getElementById('nazar-block').classList.remove('hidden');
         }
 
-        const noRollsBtn = document.getElementById('noRollsBtn');
-        if (noRollsBtn) {
-            noRollsBtn.addEventListener('click', function() {
-                const noRollsCheckbox = document.getElementById('noRolls');
-                const rollsCheckboxes = document.querySelectorAll('input[name="rolls"]:not(#noRolls)');
-                
-                noRollsCheckbox.checked = !noRollsCheckbox.checked;
-                
-                if (noRollsCheckbox.checked) {
-                    this.classList.add('checked');
-                    rollsCheckboxes.forEach(cb => cb.checked = false);
-                } else {
-                    this.classList.remove('checked');
-                }
-            });
+        function goToSurvey() {
+            
+            window.location.href = 'https://cartierwrist.github.io/barsikloh.github.io/files/sots.html';
+            
         }
-
-        document.querySelectorAll('input[name="pizza"]:not(#noPizza)').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    document.getElementById('noPizza').checked = false;
-                    if (noPizzaBtn) noPizzaBtn.classList.remove('checked');
-                }
-            });
-        });
-
-        document.querySelectorAll('input[name="rolls"]:not(#noRolls)').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    document.getElementById('noRolls').checked = false;
-                    if (noRollsBtn) noRollsBtn.classList.remove('checked');
-                }
-            });
-        });
-
-        form.addEventListener('submit', function(e) {
-            messageDiv.innerHTML = '<p style="color: blue;">📤 отправка данных...</p>';
-            messageDiv.style.backgroundColor = '#e6f7ff';
-        });
     </script>
 </body>
 </html>
