@@ -183,6 +183,25 @@
         font-size: 1.2em;
         font-weight: bold;
     }
+
+    /* Стили для красной ссылки-слова */
+    .red-link {
+        color: #ff0000 !important;
+        border: 2px solid #ff0000;
+        border-radius: 8px;
+        padding: 2px 8px;
+        text-decoration: none;
+        font-family: 'MyCustomFont', Arial, sans-serif; /* такой же стиль шрифта */
+        font-style: italic; /* чтобы соответствовать стилю h2 */
+        display: inline-block;
+        transition: all 0.2s ease;
+    }
+    
+    .red-link:hover {
+        background-color: #ff0000;
+        color: #ffffff !important;
+        cursor: url('https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/Hornet_hand_page_02.png'), pointer !important;
+    }
 </style>
 </head>
 <body>
@@ -226,6 +245,12 @@
                 <input type="checkbox" name="pizza" value="Сырный цыпленок">
                 <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/pizza/cheese_chiken.png" class="option-image">
                 <div class="option-name">Сырный цыпленок</div>
+            </label>
+
+            <label class="option-item">
+                <input type="checkbox" name="pizza" value="Сырный цыпленок">
+                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/trufelnaia.png" class="option-image">
+                <div class="option-name">Трюфельная</div>
             </label>
 
              <label class="option-item">
@@ -355,160 +380,13 @@
             </label>
         </div>
 
-        <label>Какие роллы?</label>
-        <h2>ЕСЛИ ТЫ НЕ ХОЧЕШЬ РОЛЛЫ, ТО ВЫБЕРИ ВАРИАНТ "НЕ БУДУ". МОЖНО ВЫБИРАТЬ НЕСКОЛЬКО ВАРИАНТОВ</h2>
+        <label>Роллы</label>
+        <h2>ДЕМОКРАТИИ НЕ БУДЕТ!</h2>
+        
+        <!-- Обновленная строка с кликабельным словом -->
+        <h2>заказывать буду <a href="https://vkusnyesushi.ru/#category-350" target="_blank" class="red-link">отсюда</a></h2>
 
         <div class="image-options" id="rollsOptions">
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="Эби ролл">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ebiroll.png" class="option-image">
-                <div class="option-name">Эби ролл</div>
-                <div class="option-composition">Тигровые креветки, сливочный сыр, масаго</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="КРЕВЕТКА ТЕМПУРА">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krev_temp.png" class="option-image">
-                <div class="option-name">КРЕВЕТКА ТЕМПУРА</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="АЛЯСКА">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/alaska.png" class="option-image">
-                <div class="option-name">АЛЯСКА</div>
-                <div class="option-composition">Лосось, сливочный сыр, огурец, тамаго, соусы сырный и унаги, масаго</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="КАНАГАВА">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/kanagava.png" class="option-image">
-                <div class="option-name">КАНАГАВА</div>
-                <div class="option-composition">Лосось, сливочный сыр, огурец, соусы спайси и унаги, масаго</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="РОЛЛ С КРЕВЕТКАМИ ВАСАБИ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/krev_vasabi.png" class="option-image">
-                <div class="option-name">РОЛЛ С КРЕВЕТКАМИ ВАСАБИ</div>
-                <div class="option-composition">есть мазик</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value=" ОПАЛЁННАЯ ФИЛАДЕЛЬФИЯ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/opal_phil.png" class="option-image">
-                <div class="option-name"> ОПАЛЁННАЯ ФИЛАДЕЛЬФИЯ</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ ТЕМПУРА">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_tempura.png" class="option-image">
-                <div class="option-name">ФИЛАДЕЛЬФИЯ ТЕМПУРА</div>
-                <div class="option-composition">Это очень вкусно</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ С АВОКАДО И МАНГО">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_avok_mang.png" class="option-image">
-                <div class="option-name">ФИЛАДЕЛЬФИЯ С АВОКАДО И МАНГО</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ РОЯЛ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_royal.png" class="option-image">
-                <div class="option-name">ФИЛАДЕЛЬФИЯ РОЯЛ</div>
-                <div class="option-composition">Это очень вкусно</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="САКЕ АВОКАДО">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sake_avokado.png" class="option-image">
-                <div class="option-name">САКЕ АВОКАДО</div>
-                <div class="option-composition">Лосось, авокадо</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ В УГРЕ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/phil_v_ugre.png" class="option-image">
-                <div class="option-name">ФИЛАДЕЛЬФИЯ В УГРЕ</div>
-                <div class="option-composition">Это очень вкусно</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ФИЛАДЕЛЬФИЯ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/philadelph.png" class="option-image">
-                <div class="option-name">ФИЛАДЕЛЬФИЯ</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ВЕРОНА">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/verona.png" class="option-image">
-                <div class="option-name">ВЕРОНА</div>
-                <div class="option-composition">Филе цыплёнка, сливочный сыр, огурец, соусы сырный пармезан и унаги, укроп</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ЗАПЕЧЁННЫЙ КРАБ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/zapech_krab.png" class="option-image">
-                <div class="option-name">ЗАПЕЧЁННЫЙ КРАБ</div>
-                <div class="option-composition">Снежный краб, огурец, соусы сырный и унаги</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="САМУРАЙ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/samurai.png" class="option-image">
-                <div class="option-name">САМУРАЙ</div>
-                <div class="option-composition">Лосось терияки, креветки, тамаго, соусы спайси и унаги шрирача</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="УГОРЬ ТЕМПУРА">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ugor_temp.png" class="option-image">
-                <div class="option-name">УГОРЬ ТЕМПУРА</div>
-                <div class="option-composition">Это очень вкусно</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="УНАГИ ОПАЛЁННЫЙ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/unagi_opal.png" class="option-image">
-                <div class="option-name">УНАГИ ОПАЛЁННЫЙ</div>
-                <div class="option-composition">Это очень вкусно (есть авокадо, ананас)</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="САППОРО">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/sapporo.png" class="option-image">
-                <div class="option-name">САППОРО</div>
-                <div class="option-composition">Снежный краб, сливочный сыр, тамаго, авокадо, соусы спайси и унаги, кунжут</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="КОГАНЭ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/kogane.png" class="option-image">
-                <div class="option-name">КОГАНЭ</div>
-                <div class="option-composition">Филе цыплёнка, сливочный сыр, авокадо, тамаго, соусы спайси и унаги, кунжут</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="НЕЖНАЯ КАЛИФОРНИЯ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/kaliforni.png" class="option-image">
-                <div class="option-name">НЕЖНАЯ КАЛИФОРНИЯ</div>
-                <div class="option-composition">Снежный краб, сливочный сыр, огурец, авокадо, масаго</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ЗАПЕЧЁННЫЙ РОЛЛ С ГРЕБЕШКАМИ И УГРЁМ">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/greb_ugr.png" class="option-image">
-                <div class="option-name">ЗАПЕЧЁННЫЙ РОЛЛ С ГРЕБЕШКАМИ И УГРЁМ</div>
-                <div class="option-composition">Гребешки, угорь, сливочный сыр, авокадо, соусы устричный айоли и унаги, зелёный лук</div>
-            </label>
-
-            <label class="option-item">
-                <input type="checkbox" name="rolls" value="ИСПАНЬОЛА">
-                <img src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/rolls/ispaniola.png" class="option-image">
-                <div class="option-name">ИСПАНЬОЛА</div>
-                <div class="option-composition">Мидии, бекон, сливочный сыр, тамаго, соусы спайси и унаги</div>
-            </label>
             
             <label class="option-item">
                 <input type="checkbox" name="rolls" value="НЕ БУДУ" id="noRolls">
@@ -538,39 +416,47 @@
         const form = document.getElementById('surveyForm');
         const messageDiv = document.getElementById('message');
 
-        document.getElementById('noPizzaBtn').addEventListener('click', function() {
-            const noPizzaCheckbox = document.getElementById('noPizza');
-            const pizzaCheckboxes = document.querySelectorAll('input[name="pizza"]:not(#noPizza)');
-            
-            noPizzaCheckbox.checked = !noPizzaCheckbox.checked;
-            
-            if (noPizzaCheckbox.checked) {
-                this.classList.add('checked');
-                pizzaCheckboxes.forEach(cb => cb.checked = false);
-            } else {
-                this.classList.remove('checked');
-            }
-        });
+        // Обратите внимание: если на странице нет элементов с id="noPizzaBtn" и id="noRollsBtn", 
+        // эти строки могут вызывать ошибку в консоли. Если кнопки не нужны, этот блок можно удалить.
+        const noPizzaBtn = document.getElementById('noPizzaBtn');
+        if (noPizzaBtn) {
+            noPizzaBtn.addEventListener('click', function() {
+                const noPizzaCheckbox = document.getElementById('noPizza');
+                const pizzaCheckboxes = document.querySelectorAll('input[name="pizza"]:not(#noPizza)');
+                
+                noPizzaCheckbox.checked = !noPizzaCheckbox.checked;
+                
+                if (noPizzaCheckbox.checked) {
+                    this.classList.add('checked');
+                    pizzaCheckboxes.forEach(cb => cb.checked = false);
+                } else {
+                    this.classList.remove('checked');
+                }
+            });
+        }
 
-        document.getElementById('noRollsBtn').addEventListener('click', function() {
-            const noRollsCheckbox = document.getElementById('noRolls');
-            const rollsCheckboxes = document.querySelectorAll('input[name="rolls"]:not(#noRolls)');
-            
-            noRollsCheckbox.checked = !noRollsCheckbox.checked;
-            
-            if (noRollsCheckbox.checked) {
-                this.classList.add('checked');
-                rollsCheckboxes.forEach(cb => cb.checked = false);
-            } else {
-                this.classList.remove('checked');
-            }
-        });
+        const noRollsBtn = document.getElementById('noRollsBtn');
+        if (noRollsBtn) {
+            noRollsBtn.addEventListener('click', function() {
+                const noRollsCheckbox = document.getElementById('noRolls');
+                const rollsCheckboxes = document.querySelectorAll('input[name="rolls"]:not(#noRolls)');
+                
+                noRollsCheckbox.checked = !noRollsCheckbox.checked;
+                
+                if (noRollsCheckbox.checked) {
+                    this.classList.add('checked');
+                    rollsCheckboxes.forEach(cb => cb.checked = false);
+                } else {
+                    this.classList.remove('checked');
+                }
+            });
+        }
 
         document.querySelectorAll('input[name="pizza"]:not(#noPizza)').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 if (this.checked) {
                     document.getElementById('noPizza').checked = false;
-                    document.getElementById('noPizzaBtn').classList.remove('checked');
+                    if (noPizzaBtn) noPizzaBtn.classList.remove('checked');
                 }
             });
         });
@@ -579,7 +465,7 @@
             checkbox.addEventListener('change', function() {
                 if (this.checked) {
                     document.getElementById('noRolls').checked = false;
-                    document.getElementById('noRollsBtn').classList.remove('checked');
+                    if (noRollsBtn) noRollsBtn.classList.remove('checked');
                 }
             });
         });
