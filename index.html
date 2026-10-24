@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>П.</title>
+    <title>Приветствие</title>
     
     <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/barsikforicon.png">
     <meta name="theme-color" content="#FFD700">
@@ -37,7 +37,7 @@
 
         h1 {
             font-size: 2.2em;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.3;
         }
 
@@ -45,6 +45,7 @@
             display: flex;
             gap: 30px;
             justify-content: center;
+            margin-bottom: 30px; /* Отступ до картинки, когда она появится */
         }
 
         button {
@@ -71,10 +72,9 @@
             border: 5px solid #671c1c;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(103, 28, 28, 0.3);
-            margin-bottom: 30px;
         }
 
-       
+        /* Класс для скрытия элементов */
         .hidden {
             display: none !important;
         }
@@ -82,7 +82,7 @@
 </head>
 <body>
 
-   
+    
     <div id="question-block">
         <h1>ваше имя начинается на "н" и заканчивается на "азар"?</h1>
         <div class="btn-group">
@@ -91,23 +91,20 @@
         </div>
     </div>
 
-    
+
     <div id="nazar-block" class="hidden">
-        <img id="nazar-image" src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/nazar.gif" alt="Назар">
-        <br>
-        <button onclick="goToSurvey()">Всё равно к опросу</button>
+        <img id="nazar-image" src="https://raw.githubusercontent.com/cartierwrist/barsikloh.github.io/main/files/nazar.png" alt="Назар">
     </div>
 
-        <script>
+    <script>
         function showNazar() {
-            document.getElementById('question-block').classList.add('hidden');
+           
             document.getElementById('nazar-block').classList.remove('hidden');
         }
 
         function goToSurvey() {
-            
-            window.location.href = 'https://cartierwrist.github.io/barsikloh.github.io/files/sots.html';
-            
+           
+            window.location.href = 'https://cartierwrist.github.io/barsikloh.github.io/sots.html';
         }
     </script>
 </body>
